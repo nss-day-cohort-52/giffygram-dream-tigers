@@ -8,6 +8,10 @@
 /*Typography
 --------------------------------------------------------------*/
 
+*{
+    border-style: double;
+}
+
 body, button, input, select, textarea {
     color: #404040;
     font-family: "Comfortaa", Arial, sans-serif;
@@ -51,4 +55,15 @@ h1, h2, h3, h4, h5, h6 {
 
 #logo {
     cursor: pointer;
+}
+
+.postList{
+    margin: 150px;
+    padding: 20px;
+}
+
+.giffygram{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
