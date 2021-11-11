@@ -16,7 +16,7 @@ export const PostForm = () => {
         </div>
         <div class="field">
             <label class="label" for="Story of Gif">Story behind your gif</label>
-            <input type="textarea" name="serviceBudget" class="input" />
+            <input type="textarea" name="storyOfGif" class="input" />
         </div>
 
         <button class="button" id="saveButton">Save</button>
