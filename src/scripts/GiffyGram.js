@@ -1,11 +1,12 @@
 import { Header } from "./nav/Header.js"
+import { PostList } from "./feed/PostList.js"
 
 export const GiffyGram = () => {
 
     // Show main main UI
     return `
             ${Header()}
-            <section class="postList"> to be filled with a function to populate the post list</section>
+            <section class="postList">${PostList()}</section>
             
             
             <footer class="footer">
