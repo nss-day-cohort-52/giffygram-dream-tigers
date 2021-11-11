@@ -1,48 +1,51 @@
-import { getPosts } from "../data/provider.js"
+import { getPosts , sendPosts  } from "../data/provider.js"
 
-const mainContainer = document.querySelector("#container")
-
-mainContainer.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "submitPosts") {
+addEventListener("click", 
+clickEvent => {
+    if (clickEvent.target.id === "saveButton") {
         // Get what the user typed into the form fields
-        const userDescription = document.querySelector("input[name='serviceDescription']").value
-        const userAddress = document.querySelector("input[name='serviceAddress']").value
-        const userBudget = document.querySelector("input[name='serviceBudget']").value
-        const userDate = document.querySelector("input[name='serviceDate']").value
-
+        const gifTitle = document.querySelector("input[name='titleOfGif']").value
+        const  gifUrl = document.querySelector("input[name='urlOfGif']").value
+        const gifStory = document.querySelector("input[name='storyOfGif']").value
+      
         // Make an object out of the user input
-        const dataToSendToAPI = {
-            description: userDescription,
-            address: userAddress,
-            budget: userBudget,
-            neededBy: userDate
+        const postObj = {
+            title: gifTitle,
+            imageUrl: gifUrl,
+            description: gifStory
+           
         }
 
         // Send the data to the API for permanent storage
-        sendRequest(dataToSendToAPI)
+        sendPosts(postObj)
     }
-})
+}
 
-
+)
 
 
 
 export const PostForm = () => {
+
     let html = `
         <div class="field">
             <label class="label" for="title">Title</label>
-            <input type="text" name="Title of Gif" class="input" />
+            <input type="text" name="titleOfGif" class="input" />
         </div>
         <div class="field">
             <label class="label" for="url">URL of GIF</label>
-            <input type="text" name="URL of GIF" class="input" />
+            <input type="text" name="urlOfGif" class="input" />
         </div>
         <div class="field">
             <label class="label" for="Story of Gif">Story behind your gif</label>
             <input type="textarea" name="storyOfGif" class="input" />
         </div>
 
+        <div>
         <button class="button" id="saveButton">Save</button>
+        </div>
+
+
         <button class="button" id="cancelButton">Cancel</button>
     `
 

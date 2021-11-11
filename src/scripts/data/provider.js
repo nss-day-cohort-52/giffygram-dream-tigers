@@ -61,6 +61,22 @@ export const fetchUsers = () => {
             }
         )
 }
+export const sendPosts = (posts) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(posts)
+    }
+
+
+    return fetch(`${API}/posts`, fetchOptions)
+        .then(response => response.json())
+        .then(() => {
+
+        })
+}
 
 
 export const getCurrentUser = () => {
