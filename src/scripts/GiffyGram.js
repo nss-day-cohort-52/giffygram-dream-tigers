@@ -1,3 +1,7 @@
+import { PostForm } from "./feed/PostForm.js"
+
+
+
 export const GiffyGram = () => {
 
     // Show main main UI
@@ -8,7 +12,12 @@ export const GiffyGram = () => {
                     <img>JiffyLogo</img>
                     <h1>Giffygram</h1>
                 </div>
-                <button>Post</button>
+                <div>
+                    <button>Post</button>
+                        ${PostForm()}
+                    </div>
+
+
                 <div id="accountStuff">
                     <div id="messageStuff">
                         <button>View Messages</button>
