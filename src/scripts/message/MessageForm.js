@@ -1,14 +1,14 @@
-import { getForm, getUsers, setForm } from "../data/provider.js";
+import { getMessages, getUsers, setMessages } from "../data/provider.js";
 
 const applicationElement = document.querySelector(".giffygram");
 
 export const MessageForm = () => {
     const users = getUsers();
-    const form = getForm();
+    const messages = getMessages();
 
     let html = "";
 
-    if (form === false) {
+    if (messages === false) {
         html = "";
     } else {
         html = `
@@ -36,7 +36,7 @@ export const MessageForm = () => {
 
         applicationElement.addEventListener("click", (messageClick) => {
             if (messageClick.target.id === "cancelMessage.Id") {
-                setForm();
+                setMessages();
             }
         }
         )};
