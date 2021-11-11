@@ -17,6 +17,10 @@ const applicationState = {
 
 const API = "http://localhost:3000" //based on what my json server was hosting as
 
+export const setCurrentUser = (user) => {
+    applicationState.currentUser= user
+}
+
 export const fetchPosts = () => {
     return fetch(`${API}/posts`)
         .then(response => response.json())
@@ -60,7 +64,7 @@ export const fetchUsers = () => {
 
 
 export const getCurrentUser = () => {
-    return applicationState.currentUser.map(currentUser => ({ ...currentUser }))
+    return applicationState.currentUser
 }
 export const getUsers = () => {
     return applicationState.users.map(user => ({ ...user }))
