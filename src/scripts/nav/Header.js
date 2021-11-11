@@ -1,4 +1,5 @@
 import { setCurrentUser } from "../data/provider.js"
+import { PostButton } from "../feed/PostButton.js"
 import { PostForm } from "../feed/PostForm.js"
 
 export const Header = () => {
@@ -7,7 +8,7 @@ export const Header = () => {
                     <img>JiffyLogo</img>
                     <h1>Giffygram</h1>
                 </div>
-                <button>Post</button>
+                ${PostButton()}
                 <div>
                     ${PostForm()}
                 </div>
