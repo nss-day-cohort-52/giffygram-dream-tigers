@@ -1,31 +1,12 @@
-import { PostForm } from "./feed/PostForm.js"
-
-
+import { Header } from "./nav/Header.js"
 
 export const GiffyGram = () => {
 
     // Show main main UI
     return `
+            ${Header()}
             <section class="postList"> to be filled with a function to populate the post list</section>
-            <nav class="navigation">
-                <div class="banner">
-                    <img>JiffyLogo</img>
-                    <h1>Giffygram</h1>
-                </div>
-                <div>
-                    <button>Post</button>
-                        ${PostForm()}
-                    </div>
-
-
-                <div id="accountStuff">
-                    <div id="messageStuff">
-                        <button>View Messages</button>
-                        <button>Compose</button>
-                    </div>
-                    <button>Logout</button>
-                </div>
-            </nav>
+            
             
             <footer class="footer">
                 <div>

@@ -6,14 +6,22 @@ const applicationElement = document.querySelector(".giffygram")
 
 export const renderApp = () => {
     const user = parseInt(localStorage.getItem("gg_user"))
-    fetchLikes().then(fetchMessages().then(fetchPosts().then(fetchUsers().then( () => {
+    fetchLikes().then(
+        fetchMessages().then(
+            fetchPosts().then(
+                fetchUsers().then( () => {
 
-    if (!user) {
-        applicationElement.innerHTML = GiffyGram()
-    } else {
-        applicationElement.innerHTML = LoginForm()
-    }}
-    ))))
+                    if (user) {
+                        applicationElement.innerHTML = GiffyGram()
+                    } else {
+                        applicationElement.innerHTML = LoginForm()
+                    }
+                }
+                ))))
 }
 
 renderApp()
+
+document.querySelector(".giffygram").addEventListener("stateChanged", () => {
+    renderApp()
+})
