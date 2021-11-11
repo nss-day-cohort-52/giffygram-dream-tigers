@@ -1,5 +1,7 @@
 import { setCurrentUser } from "../data/provider.js"
 import { PostForm } from "../feed/PostForm.js"
+import { MessageForm } from "../message/MessageForm.js"
+import { unreadMessages } from "../message/UnreadMessages.js"
 
 export const Header = () => {
     return `<nav class="navigation">
@@ -14,7 +16,9 @@ export const Header = () => {
                 <div id="accountStuff">
                     <div id="messageStuff">
                         <button>View Messages</button>
+                        ${unreadMessages()}
                         <button>Compose</button>
+                        ${MessageForm()}
                     </div>
                     <button id="logout">Logoutt</button>
                 </div>
