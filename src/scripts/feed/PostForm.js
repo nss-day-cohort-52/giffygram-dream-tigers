@@ -27,6 +27,7 @@ clickEvent => {
          document.querySelector("input[name='storyOfGif']").value = ""
         const modal = document.getElementById("postModal") //selects the modal
          modal.style.display="none" //closes it
+         document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
     }
 }
 )
@@ -41,6 +42,7 @@ document.querySelector(".giffygram").addEventListener("click", clickEvent => {
         //selects the modal and closes it
         const modal = document.getElementById("postModal")
         modal.style.display="none"
+        
     }
 })
 
