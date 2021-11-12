@@ -1,6 +1,7 @@
 import { LoginForm } from "./auth/Login.js"
-import { fetchLikes, fetchMessages, fetchPosts, fetchUsers } from "./data/provider.js"
+import { fetchLikes, fetchMessages, fetchPosts, fetchUsers, setCurrentUser } from "./data/provider.js"
 import { GiffyGram } from "./GiffyGram.js"
+
 
 const applicationElement = document.querySelector(".giffygram")
 
@@ -12,6 +13,7 @@ export const renderApp = () => {
                 fetchUsers().then( () => {
 
                     if (user) {
+                        setCurrentUser(user)
                         applicationElement.innerHTML = GiffyGram()
                     } else {
                         applicationElement.innerHTML = LoginForm()

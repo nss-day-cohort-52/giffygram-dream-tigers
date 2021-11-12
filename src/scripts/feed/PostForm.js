@@ -1,5 +1,8 @@
 import { getPosts , sendPosts  } from "../data/provider.js"
 
+
+// const applicationElement = document.querySelector(".saveButton")
+
 addEventListener("click", 
 clickEvent => {
     if (clickEvent.target.id === "saveButton") {
@@ -51,3 +54,7 @@ export const PostForm = () => {
 
     return html
 }
+
+// document.querySelector(".saveButton").addEventListener("stateChanged", () => {
+//     renderApp()
+// })

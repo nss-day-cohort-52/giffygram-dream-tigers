@@ -10,9 +10,9 @@ export const Header = () => {
                     <h1>Giffygram</h1>
                 </div>
                 <button>Post</button>
-                <div>
+                <section>
                     ${PostForm()}
-                </div>
+                </section>
                 <div id="accountStuff">
                     <div id="messageStuff">
                         <button>View Messages</button>
