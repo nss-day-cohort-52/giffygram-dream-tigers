@@ -11,8 +11,12 @@ export const Header = () => {
                     <h1>Giffygram</h1>
                 </div>
                 ${PostButton()}
-                <div>
-                    ${PostForm()}
+
+                <div id="postModal" class="modal">
+                        <div class="modal-content">
+                            ${PostForm()// modal is hidden by default. clicking the post button changes it to visible and runs the internals
+                            }
+                        </div>
                 </div>
                 <div id="accountStuff">
                     <div id="messageStuff">
