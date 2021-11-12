@@ -1,4 +1,4 @@
-import { getPosts , sendPosts  } from "../data/provider.js"
+import {  sendPosts  } from "../data/provider.js"
 
 addEventListener("click", 
 clickEvent => {
@@ -18,10 +18,24 @@ clickEvent => {
 
         // Send the data to the API for permanent storage
         sendPosts(postObj)
+        const modal = document.getElementById("postModal") //selects the modal
+        modal.style.display="none" //closes it
     }
 }
-
 )
+
+
+document.querySelector(".giffygram").addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "cancelButton") {
+        //resets the form value
+        document.querySelector("input[name='titleOfGif']").value = ""
+        document.querySelector("input[name='urlOfGif']").value = ""
+        document.querySelector("input[name='storyOfGif']").value = ""
+        //selects the modal and closes it
+        const modal = document.getElementById("postModal")
+        modal.style.display="none"
+    }
+})
 
 
 
@@ -40,12 +54,9 @@ export const PostForm = () => {
             <label class="label" for="Story of Gif">Story behind your gif</label>
             <input type="textarea" name="storyOfGif" class="input" />
         </div>
-
         <div>
         <button class="button" id="saveButton">Save</button>
         </div>
-
-
         <button class="button" id="cancelButton">Cancel</button>
     `
 
