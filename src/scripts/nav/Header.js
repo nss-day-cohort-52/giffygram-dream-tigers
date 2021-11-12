@@ -1,4 +1,5 @@
 import { setCurrentUser } from "../data/provider.js"
+import { PostButton } from "../feed/PostButton.js"
 import { PostForm } from "../feed/PostForm.js"
 import { MessageForm } from "../message/MessageForm.js"
 import { unreadMessages } from "../message/UnreadMessages.js"
@@ -9,10 +10,14 @@ export const Header = () => {
                     <img>JiffyLogo</img>
                     <h1>Giffygram</h1>
                 </div>
-                <button>Post</button>
-                <section>
-                    ${PostForm()}
-                </section>
+                ${PostButton()}
+
+                <div id="postModal" class="modal">
+                        <div class="modal-content">
+                            ${PostForm()// modal is hidden by default. clicking the post button changes it to visible and runs the internals
+                            }
+                        </div>
+                </div>
                 <div id="accountStuff">
                     <div id="messageStuff">
                         <button>View Messages</button>
