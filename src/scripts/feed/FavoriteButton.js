@@ -9,8 +9,7 @@ document.addEventListener(
        
    }
 )
-
-
 export const FavoriteButton = () => {
     return `<button id = favoriteButton'>Favorite</button>`
 } 
+
