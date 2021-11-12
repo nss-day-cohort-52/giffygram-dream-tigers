@@ -18,6 +18,10 @@ clickEvent => {
 
         // Send the data to the API for permanent storage
         sendPosts(postObj)
+        //resets form value
+        document.querySelector("input[name='titleOfGif']").value = ""
+        document.querySelector("input[name='urlOfGif']").value = ""
+        document.querySelector("input[name='storyOfGif']").value = ""
         const modal = document.getElementById("postModal") //selects the modal
         modal.style.display="none" //closes it
     }
